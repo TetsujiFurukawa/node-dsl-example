@@ -1,9 +1,6 @@
 job('NodeJS Job') {
     scm {
-        git('https://github.com/TetsujiFurukawa/testcafe-ci-example.git', 'master') {  node ->
-            node / gitConfigName('DSL User')
-            node / gitConfigEmail('jenkins-dsl@example.com')
-        }
+        git('https://github.com/TetsujiFurukawa/testcafe-ci-example.git', 'master')
     }
     wrappers {
         nodejs('node_latest')
@@ -13,10 +10,6 @@ job('NodeJS Job') {
         shell("npx testcafe chrome:headless tests/test.js -r xunit:report.xml")
     }
     publishers {
-        archiveXUnit {
-            jUnit {
-                pattern('report.xml')
-            }
-        }
+        archiveJunit('report.xml')
     }
 }

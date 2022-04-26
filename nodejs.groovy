@@ -1,6 +1,9 @@
 job('NodeJS Job') {
     scm {
-        git('https://github.com/TetsujiFurukawa/testcafe-ci-example.git', 'master')
+        git('https://github.com/TetsujiFurukawa/testcafe-ci-example.git', 'master') {  node ->
+            node / gitConfigName('DSL User')
+            node / gitConfigEmail('jenkins-dsl@example.com')
+        }
     }
     wrappers {
         nodejs('node_latest')

@@ -1,4 +1,4 @@
-job('NodeJS Job') {
+job('testcafe-example-dsl-node') {
     scm {
         git('https://github.com/TetsujiFurukawa/testcafe-ci-example.git', 'master')
     }

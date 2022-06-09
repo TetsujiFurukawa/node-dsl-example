@@ -11,5 +11,6 @@ job('testcafe-dsl-example') {
     }
     publishers {
         archiveJunit('report.xml')
+        testDataPublishers('TestCafePublisher')
     }
 }

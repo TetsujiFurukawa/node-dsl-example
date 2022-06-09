@@ -10,7 +10,7 @@ job('testcafe-dsl-example') {
         shell("npx testcafe chrome:headless tests/test.js -s takeOnFails=true --video artifacts/videos --video-options ,failedOnly=true -r jenkins:report.xml")
     } 
     publishers {
-                testDataPublishers([[$class: 'TestCafePublisher']])
+                testDataPublishers([$class: 'TestCafePublisher'])
                 testResults('report.xml')
     }
 }

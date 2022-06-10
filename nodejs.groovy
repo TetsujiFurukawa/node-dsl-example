@@ -15,6 +15,7 @@ job('testcafe-dsl-example') {
             retainLongStdout()
             healthScaleFactor(1.5)
             testDataPublishers {
+                'TestCafePublisher'
                 // Allows claiming of failed tests.
                 allowClaimingOfFailedTests()
                 // Publishes a report about flaky tests.

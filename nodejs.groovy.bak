@@ -10,13 +10,17 @@ job('testcafe-dsl-example') {
         shell("npx testcafe chrome:headless tests/test.js -s takeOnFails=true --video artifacts/videos --video-options ,failedOnly=true -r jenkins:report.xml")
     } 
     publishers {
-        archiveJunit('report.xml'){
-            // allowEmptyResults()
-            // retainLongStdout()
-            // healthScaleFactor(1.5)
-            testDataPublishers {
-                ['TestCafePublisher']
-            }            
+<<<<<<< HEAD
+        archiveJunit('report.xml')
+        testDataPublishers('TestCafePublisher')
+=======
+        post {
+            always {
+                junit keepLongStdio: true,
+                testDataPublishers: [[$class: 'TestCafePublisher']],
+                testResults: 'report.xml'
+            }
         }
+>>>>>>> 3fb67c70857042a9c58fac2a6b1c967402fdf2d9
     }
 }

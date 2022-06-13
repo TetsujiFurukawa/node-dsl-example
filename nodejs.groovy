@@ -12,9 +12,10 @@ job('testcafe-dsl-example') {
     publishers {
         archiveJunit('report.xml'){
             // allowEmptyResults()
-            retainLongStdout()
+            // retainLongStdout()
             // healthScaleFactor(1.5)
-            // testDataPublishers [[$class: 'TestCafePublisher']]
+            println $class.class
+            testDataPublishers [[$class: 'TestCafePublisher']]
         }
     }
 }

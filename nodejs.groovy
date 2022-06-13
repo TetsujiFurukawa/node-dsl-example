@@ -14,9 +14,8 @@ job('testcafe-dsl-example') {
             // allowEmptyResults()
             // retainLongStdout()
             // healthScaleFactor(1.5)
-            testDataPublishers {
-                [[$class: 'TestCafePublisher']]
-            }            
+            testDataPublishers [[$class: 'TestCafePublisher']]
+            
         }
     }
 }

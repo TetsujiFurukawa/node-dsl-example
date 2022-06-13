@@ -15,7 +15,10 @@ job('testcafe-dsl-example') {
             // retainLongStdout()
             // healthScaleFactor(1.5)
             // println $class.class
-            testDataPublishers ['TestCafePublisher']
+            // testDataPublishers ['TestCafePublisher']
         }
+    }
+    node {
+    step([$class: 'ArtifactArchiver', artifacts: 'TestCafePublisher'])
     }
 }

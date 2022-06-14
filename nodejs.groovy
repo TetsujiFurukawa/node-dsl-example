@@ -18,7 +18,7 @@ job('testcafe-dsl-example') {
             // testDataPublishers ['TestCafePublisher']
         }
     }
-    node {
-    step([$class: 'ArtifactArchiver', artifacts: 'TestCafePublisher'])
+    configure { project ->
+        project / publishers << 'io.jenkins.plugins.testcafe.TestCafePublisher' {}
     }
 }

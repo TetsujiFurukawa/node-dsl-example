@@ -19,6 +19,6 @@ job('testcafe-dsl-example') {
         }
     }
     configure { project ->
-        project / 'publishers' / 'hudson.tasks.junit.JUnitRedsultArchiver' / 'testDataPublishers' << 'io.jenkins.plugins.testcafe.TestCafePublisher' {}
+        project / 'publishers' / 'hudson.tasks.junit.JUnitResultArchiver' / 'testDataPublishers' << 'io.jenkins.plugins.testcafe.TestCafePublisher' {}
     }
 }

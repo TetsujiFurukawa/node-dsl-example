@@ -19,6 +19,6 @@ job('testcafe-dsl-example') {
         }
     }
     configure { project ->
-        project / publishers << testDataPublishers << 'io.jenkins.plugins.testcafe.TestCafePublisher' {}
+        project / 'publishers' / 'testDataPublishers' << 'io.jenkins.plugins.testcafe.TestCafePublisher' {}
     }
 }

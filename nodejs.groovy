@@ -6,7 +6,13 @@ job('testcafe-dsl-example') {
         }
     }
     steps {
-        shell("npm install")
+        def test = 'test'
+        shell('''
+        cd ${test}
+        npm install
+        ''')
+
+        // shell("npm install")
         shell("npx testcafe chrome:headless tests/test.js -s takeOnFails=true --video artifacts/videos --video-options ,failedOnly=true -r jenkins:report.xml")
     } 
     publishers {
